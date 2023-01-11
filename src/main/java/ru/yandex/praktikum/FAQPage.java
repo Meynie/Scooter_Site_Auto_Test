@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.Arrays;
+import java.util.List;
 
-import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class FAQPage {
     private final WebDriver webDriver;
@@ -35,9 +35,7 @@ public class FAQPage {
             listOfElements.get(i).click();
             boolean isDisplayed = webDriver.findElement(listOfLocator.get(i)).isDisplayed();
             new WebDriverWait(webDriver, 3)
-                    .until(ExpectedConditions.visibilityOf( webDriver.findElement(listOfLocator.get(i))));
-            assertTrue(isDisplayed);
-            //webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    .until(ExpectedConditions.visibilityOf(webDriver.findElement(listOfLocator.get(i))));
         };
         return this;
     }

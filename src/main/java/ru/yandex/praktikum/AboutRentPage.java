@@ -1,11 +1,13 @@
 package ru.yandex.praktikum;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
+
 
 public class AboutRentPage {
     private final WebDriver webDriver;
@@ -77,7 +79,9 @@ public class AboutRentPage {
 
     public AboutRentPage successfulWindowIsDisplayed(){
         boolean isDisplayed = webDriver.findElement(successfulWindow).isDisplayed();
-        assertTrue(isDisplayed);
+
+        Assert.assertTrue(isDisplayed);
+        //assertTrue(isDisplayed);
         return this;
     }
 }
